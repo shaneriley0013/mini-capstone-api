@@ -9,3 +9,5 @@
 product = Product.new( name: "Burberry Shirt", price: 350, image_url: "https://assets.burberry.com/is/image/Burberryltd/85754AD2-B452-4FE9-A7CA-BE0FFD8D6B0F?$BBY_V2_SL_3x4$&wid=1278&hei=1700", description: "Large Nova Check" )
 
 product.save
+
+
