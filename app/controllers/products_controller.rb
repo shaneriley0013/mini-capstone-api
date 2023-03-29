@@ -6,25 +6,22 @@ class ProductsController < ApplicationController
     render template: "products/show"
   end
 
+  def show
+    @product = Product.last
+  end
+
   def index
     @products = Product.all
     render template: "products/index"
   end
   
   
-  # def singular
-  #   @product = Product.find_by(id: params["id"])
-  #   render template: "products/show"
-  # end  
+  def singular
+    @product = Product.find_by(id: params["id"])
+    render template: "products/show"
+  end  
 
-  # def index
-  #   
-  #   @products = Product.all
-  # 
-  #   render template: "products/index"
-  # end
-  
-  
+    
   
   
   
