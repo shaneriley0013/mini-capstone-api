@@ -1,17 +1,17 @@
 
 
 
-
-
-
 Rails.application.routes.draw do
 
-  get "/one_product/:id" => "products#singular"
+  get "/products" => "products#index"
+
+  get "/product/:id" => "products#show"
 
   get "/first_product/" => "products#first"
   
   get "/last_product/" => "products#last"
 
-  get "/all_products" => "products#index"
+  
 
 end
+
