@@ -11,3 +11,6 @@ product = Product.new( name: "Burberry Shirt", price: 350, image_url: "https://a
 product.save
 
 
+product = Product.new( name: "Gucci Slippers", price: 250, image_url: "https://i.ebayimg.com/images/g/nHEAAOSw8BVjjPjI/s-l1600.jpg", description: "Gucci Green and Red Filp" )
+
+product.save

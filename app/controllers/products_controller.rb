@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
 
 
-  def show
+  def first
     @product = Product.first   
     render template: "products/show"
   end
 
-  def show
+  def last
     @product = Product.last
+    render template: "products/show"
   end
 
   def index
