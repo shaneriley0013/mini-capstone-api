@@ -9,4 +9,4 @@ json.updated_at product.updated_at
 
 #====================WHATEVER IS IN HERE WILL DISPLAY TO THE USER==================
 
-["id", "name", "price", "image_url", "description", "created_at", "updated_at"]
+#["id", "name", "price", "image_url", "description", "created_at", "updated_at"]
