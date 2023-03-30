@@ -1,6 +1,16 @@
 class ProductsController < ApplicationController
 
 
+    def index
+    @products = Product.all
+    render :index
+  end
+  
+  def show
+    @product = Product.find_by(id: params[:id])
+    render :show
+  end 
+  
   # def first
   #   @product = Product.first   
   #   render :show
@@ -10,16 +20,6 @@ class ProductsController < ApplicationController
   #   @product = Product.last
   #   render :show
   # end
-
-  def index
-    @products = Product.all
-    render :index
-  end
-  
-  def show
-    @product = Product.find_by(id: params[:id])
-    render :show
-  end  
 
 end
 
