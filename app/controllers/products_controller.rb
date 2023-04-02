@@ -1,9 +1,4 @@
 
-
-
-
-
-
 class ProductsController < ApplicationController
 
 
