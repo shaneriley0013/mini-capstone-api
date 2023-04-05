@@ -1,4 +1,14 @@
 class Product < ApplicationRecord
+
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :image_url, presence: true
+  validates :description, presence: true
+
+
+
+
+
   def is_discounted?
     #!(price >= 10)  #FANCY WAY
     if price < 10
