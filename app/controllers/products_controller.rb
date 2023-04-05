@@ -20,8 +20,12 @@ class ProductsController < ApplicationController
       description: params[:description],
       invetory_count: params[:invetory_count]      
     )
-    @product.save
-    render :show
+    if @product.save
+      render :show
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
+
   end
   
   def update
@@ -32,8 +36,12 @@ class ProductsController < ApplicationController
     @product.description = params[:description] || @product.description
     @product.invetory_count = params[:invetory_count] || @product.invetory_count
     
-    @product.save
-    render :show
+    if @product.save
+      render :show
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
+    
   end
   
   def destroy
