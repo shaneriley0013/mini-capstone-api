@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
     @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.invetory_count = params[:invetory_count] || @product.invetory_count
+    @product.foreign_id = params[:foreign_id] || @product.foreign_id
     
     if @product.save
       render :show
