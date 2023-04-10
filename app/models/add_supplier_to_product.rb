@@ -1,0 +1,2 @@
+class AddSupplierToProduct < ApplicationRecord
+end
