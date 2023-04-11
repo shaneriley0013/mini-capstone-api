@@ -28,4 +28,10 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
+
+  def supplier
+    Supplier.find_by(id: foreign_id)
+  end
+
+
 end
