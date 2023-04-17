@@ -4,13 +4,23 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    render :index
+    if current_user
+      render :index
+    else
+      render json: {message: "You are not logged in! Denied"}, status: :unauthorized
+    end
   end
+
+
+
   
   def show
     @product = Product.find_by(id: params[:id])
     render :show
-  end  
+  end
+  
+  
+
 
   def create
     @product = Product.new(
@@ -18,10 +28,9 @@ class ProductsController < ApplicationController
       price: params[:price], 
       description: params[:description],
       invetory_count: params[:invetory_count],
-      #supplier_id: params[:supplier_id]      
+      foreign_id: params[:foreign_id]      
     )
 
-    
     if @product.save
       @image = Image.new(
         url: params[:image_url],
@@ -34,6 +43,9 @@ class ProductsController < ApplicationController
     end
 
   end
+
+
+
   
   def update
     @product = Product.find_by(id: params[:id])
@@ -45,12 +57,20 @@ class ProductsController < ApplicationController
         
     
     if @product.save
+      @image = Image.new(
+        url: params[:image_url],
+        product_id: @product.id
+      )
       render :show
     else
       render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
     end
     
   end
+
+
+
+
   
   def destroy
     @product = Product.find_by(id: params[:id])
