@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   
   delete "/products/:id" => "products#destroy"
 
+  patch "/images/:id" => "images#update"
+
+  
 end
 
