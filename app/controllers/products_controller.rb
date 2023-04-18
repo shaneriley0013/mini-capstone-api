@@ -1,9 +1,9 @@
 
 class ProductsController < ApplicationController
-
+  #before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    p current_user
+    
     @products = Product.all
     if current_user
       render :index
