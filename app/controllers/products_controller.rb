@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
 
   def index
+    p current_user
     @products = Product.all
     if current_user
       render :index
