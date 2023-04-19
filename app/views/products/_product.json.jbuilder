@@ -10,6 +10,7 @@ json.invetory_count product.invetory_count
 json.supplier product.supplier
 json.created_at product.created_at
 json.updated_at product.updated_at
+json.categories product.categories
 
 
 #============WHATEVER IS IN HERE WILL DISPLAY TO THE USER==================#
