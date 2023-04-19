@@ -14,12 +14,6 @@ class Product < ApplicationRecord
 ##### NEED TO ADD INVETORY VALIDATION?
 
 
-
-
-
-
-
-
   def is_discounted?
     #!(price >= 10)  #FANCY WAY
     if price < 10
