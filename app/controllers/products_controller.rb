@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
       foreign_id: params[:foreign_id]      
     )
 
-    if @product.save
+    if @product.save!
       @image = Image.new(
         url: params[:image_url],
         product_id: @product.id
